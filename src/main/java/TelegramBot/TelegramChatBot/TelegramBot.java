@@ -18,6 +18,11 @@ public class TelegramBot extends TelegramLongPollingBot {
 		if (update.hasMessage() && update.getMessage().hasText()) {
 			
 			System.out.println("nachicht erhalten");
+			String message_text = update.getMessage().getText();
+			final long chat_id = update.getMessage().getChatId();
+			
+			
+			
 			
 		} else {
 			
@@ -32,6 +37,13 @@ public class TelegramBot extends TelegramLongPollingBot {
 
 		return "457679296:AAECBoRZxc9Co2dJOcJfZ0utwDa_rlB0ytY";
 
+	}
+	private String getCommandAnswer(String message_text) {
+		
+		
+		
+		return null;
+		
 	}
 
 }
