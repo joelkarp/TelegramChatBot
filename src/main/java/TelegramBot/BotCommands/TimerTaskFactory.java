@@ -8,6 +8,12 @@ import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 import TelegramBot.TelegramChatBot.TelegramBot;
 
 public class TimerTaskFactory {
+	
+	public static final int PERSECOND = 1000;
+	public static final int PERMINUTE = 60000;
+	public static final int PERHOURE = 3600000;
+	public static final int PERDAY = 86400000;
+	public static final int PERWEEK = 604800000;
 
 	public static TimerTask getTimerTaskInstanze(String command, TelegramBot bot) {
 		return new TimerTask() {
@@ -36,4 +42,5 @@ public class TimerTaskFactory {
 
 		};
 	}
+
 }

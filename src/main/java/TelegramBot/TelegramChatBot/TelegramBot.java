@@ -1,5 +1,7 @@
 package TelegramBot.TelegramChatBot;
 
+import java.util.Timer;
+
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.Update;
@@ -8,6 +10,8 @@ import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 import TelegramBot.BotCommands.ActivCommands;
 import TelegramBot.BotCommands.CommandNotFoundException;
 import TelegramBot.BotCommands.KinopolisKinoProgram;
+import TelegramBot.BotCommands.TimerTaskFactory;
+
 
 public class TelegramBot extends TelegramLongPollingBot {
 
@@ -16,10 +20,17 @@ public class TelegramBot extends TelegramLongPollingBot {
 	public TelegramBot() {
 		commandList = new ActivCommands();
 		initCommandList();
+		initScheduledCommands();
 	}
 
 	private void initCommandList() {
 		commandList.addCommand("kinopolis", new KinopolisKinoProgram());
+
+	}
+
+	private void initScheduledCommands() {
+
+		new Timer().schedule(TimerTaskFactory.getTimerTaskInstanze("kinopolis", this), 00, TimerTaskFactory.PERWEEK);
 	}
 
 	public String getBotUsername() {
@@ -56,12 +67,10 @@ public class TelegramBot extends TelegramLongPollingBot {
 	private String getCommandAnswer(String message_text) {
 		try {
 			return this.commandList.getCommand(message_text).execute();
-		}
-		catch(CommandNotFoundException e) {
+		} catch (CommandNotFoundException e) {
 			return "Befehl leider nicht erkannt";
 		}
-				
-			
+
 	}
 
 	private void sendMessage(String content, long chatID) {
@@ -80,8 +89,5 @@ public class TelegramBot extends TelegramLongPollingBot {
 	public final ActivCommands getCommandList() {
 		return commandList;
 	}
-	
-
-
 
 }

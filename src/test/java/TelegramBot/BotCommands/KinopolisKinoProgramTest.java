@@ -1,5 +1,6 @@
 package TelegramBot.BotCommands;
 
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
 
 import org.junit.jupiter.api.Test;
@@ -10,7 +11,7 @@ public class KinopolisKinoProgramTest {
 	
 	@Test
 	public void KinopolisKinoProgramExecuteTest() {
-		assertNull(kinopolisCom.execute());
+		assertNotNull(kinopolisCom.execute());
 	}
 	
 }
