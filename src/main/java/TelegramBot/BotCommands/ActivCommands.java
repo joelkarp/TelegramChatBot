@@ -22,8 +22,11 @@ public class ActivCommands {
 
 	}
 
-	public BotCommand getCommand(String key) {
-		return commands.get(key);
+	public BotCommand getCommand(String key) throws CommandNotFoundException{
+		if(commands.containsKey(key))
+			return commands.get(key);
+		else
+			throw new CommandNotFoundException();
 	}
 
 	public int getCommandCount() {
