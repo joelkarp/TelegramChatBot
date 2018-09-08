@@ -39,8 +39,10 @@ public class ActivCommands {
 
 		Stream<String> messageAsStream = Arrays.asList(message.toLowerCase().split(" ")).stream();
 		String[] antwort = messageAsStream.filter(word -> commands.containsKey(word)).toArray(String[]::new);
-		System.out.println(antwort);
+		
+		Arrays.asList(antwort).stream().forEach(word->System.out.println(word));
 
+		
 		if (antwort.length == 0)
 			throw new CommandNotFoundException();
 		else
