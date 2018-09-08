@@ -76,7 +76,12 @@ public class TelegramBot extends TelegramLongPollingBot {
 		}
 
 	}
+
+	public final ActivCommands getCommandList() {
+		return commandList;
+	}
 	
+
 
 
 }
