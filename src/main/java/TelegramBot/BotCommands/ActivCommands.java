@@ -1,6 +1,8 @@
 package TelegramBot.BotCommands;
 
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.stream.Stream;
 
 public class ActivCommands {
 
@@ -22,14 +24,28 @@ public class ActivCommands {
 
 	}
 
-	public BotCommand getCommand(String key) throws CommandNotFoundException{
-		if(commands.containsKey(key))
-			return commands.get(key);
-		else
-			throw new CommandNotFoundException();
+	public BotCommand getCommand(String key) throws CommandNotFoundException {
+
+		key = surchForKey(key);
+		return commands.get(key);
+
 	}
 
 	public int getCommandCount() {
 		return commands.size();
 	}
+
+	private String surchForKey(String message) throws CommandNotFoundException {
+
+		Stream<String> messageAsStream = Arrays.asList(message.toLowerCase().split(" ")).stream();
+		String[] antwort = messageAsStream.filter(word -> commands.containsKey(word)).toArray(String[]::new);
+		System.out.println(antwort);
+
+		if (antwort.length == 0)
+			throw new CommandNotFoundException();
+		else
+			return antwort[0];
+
+	}
+
 }
