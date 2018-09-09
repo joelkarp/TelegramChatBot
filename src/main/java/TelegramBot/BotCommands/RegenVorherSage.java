@@ -7,7 +7,8 @@ public class RegenVorherSage implements BotCommand{
 		
 		BotCommand wetterVorhersageCommand = new WetterVorherSage();
 		System.out.println(wetterVorhersageCommand.execute().split("\n")[2]);
-		return null;
+		
+		return wetterVorhersageCommand.execute().split("\n")[2];
 	}
 
 }

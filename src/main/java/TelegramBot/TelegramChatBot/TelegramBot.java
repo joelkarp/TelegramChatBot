@@ -10,32 +10,34 @@ import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 import TelegramBot.BotCommands.ActivCommands;
 import TelegramBot.BotCommands.CommandNotFoundException;
 import TelegramBot.BotCommands.KinopolisKinoProgram;
-import TelegramBot.BotCommands.TimerTaskFactory;
-import TelegramBot.BotCommands.WetterVorherSage;
 
+import TelegramBot.BotCommands.RegenVorherSage;
+import TelegramBot.BotCommands.WetterVorherSage;
+import TelegramBot.scheduledBotCommands.TimerTaskFactory;
 
 public class TelegramBot extends TelegramLongPollingBot {
 
 	private ActivCommands commandList;
 
 	public TelegramBot() {
-		
+
 		commandList = new ActivCommands();
 		initCommandList();
 		initScheduledCommands();
 	}
 
 	private void initCommandList() {
-		
+
 		commandList.addCommand("kinopolis", new KinopolisKinoProgram());
 		commandList.addCommand("wetter", new WetterVorherSage());
-		
+		commandList.addCommand("regnen", new RegenVorherSage());
+
 	}
 
 	private void initScheduledCommands() {
 
 		new Timer().schedule(TimerTaskFactory.getTimerTaskInstanze("kinopolis", this), 00, TimerTaskFactory.PERWEEK);
-		
+
 	}
 
 	public String getBotUsername() {
@@ -70,7 +72,7 @@ public class TelegramBot extends TelegramLongPollingBot {
 	}
 
 	private String getCommandAnswer(String message_text) {
-		
+
 		try {
 			return this.commandList.getCommand(message_text).execute();
 		} catch (CommandNotFoundException e) {

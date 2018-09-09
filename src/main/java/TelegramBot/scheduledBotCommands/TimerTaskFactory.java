@@ -1,10 +1,11 @@
-package TelegramBot.BotCommands;
+package TelegramBot.scheduledBotCommands;
 
 import java.util.TimerTask;
 
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
+import TelegramBot.BotCommands.CommandNotFoundException;
 import TelegramBot.TelegramChatBot.TelegramBot;
 
 public class TimerTaskFactory {

@@ -1,8 +1,10 @@
 /Users/joelkarp/eclipseW2/TelegramChatBot/src/main/java/TelegramBot/BotCommands/CommandNotFoundException.java
 /Users/joelkarp/eclipseW2/TelegramChatBot/src/main/java/TelegramBot/BotCommands/ActivCommands.java
 /Users/joelkarp/eclipseW2/TelegramChatBot/src/main/java/TelegramBot/TelegramChatBot/TelegramBot.java
+/Users/joelkarp/eclipseW2/TelegramChatBot/src/main/java/TelegramBot/scheduledBotCommands/ScheduledRegenVorherSage.java
 /Users/joelkarp/eclipseW2/TelegramChatBot/src/main/java/TelegramBot/TelegramChatBot/App.java
-/Users/joelkarp/eclipseW2/TelegramChatBot/src/main/java/TelegramBot/BotCommands/TimerTaskFactory.java
 /Users/joelkarp/eclipseW2/TelegramChatBot/src/main/java/TelegramBot/BotCommands/KinopolisKinoProgram.java
+/Users/joelkarp/eclipseW2/TelegramChatBot/src/main/java/TelegramBot/BotCommands/RegenVorherSage.java
+/Users/joelkarp/eclipseW2/TelegramChatBot/src/main/java/TelegramBot/scheduledBotCommands/TimerTaskFactory.java
 /Users/joelkarp/eclipseW2/TelegramChatBot/src/main/java/TelegramBot/BotCommands/WetterVorherSage.java
 /Users/joelkarp/eclipseW2/TelegramChatBot/src/main/java/TelegramBot/BotCommands/BotCommand.java
