@@ -18,12 +18,14 @@ public class TelegramBot extends TelegramLongPollingBot {
 	private ActivCommands commandList;
 
 	public TelegramBot() {
+		
 		commandList = new ActivCommands();
 		initCommandList();
 		initScheduledCommands();
 	}
 
 	private void initCommandList() {
+		
 		commandList.addCommand("kinopolis", new KinopolisKinoProgram());
 
 	}
@@ -31,6 +33,7 @@ public class TelegramBot extends TelegramLongPollingBot {
 	private void initScheduledCommands() {
 
 		new Timer().schedule(TimerTaskFactory.getTimerTaskInstanze("kinopolis", this), 00, TimerTaskFactory.PERWEEK);
+		
 	}
 
 	public String getBotUsername() {
@@ -65,6 +68,7 @@ public class TelegramBot extends TelegramLongPollingBot {
 	}
 
 	private String getCommandAnswer(String message_text) {
+		
 		try {
 			return this.commandList.getCommand(message_text).execute();
 		} catch (CommandNotFoundException e) {
