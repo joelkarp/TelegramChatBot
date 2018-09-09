@@ -13,6 +13,7 @@ import TelegramBot.BotCommands.KinopolisKinoProgram;
 
 import TelegramBot.BotCommands.RegenVorherSage;
 import TelegramBot.BotCommands.WetterVorherSage;
+import TelegramBot.scheduledBotCommands.ScheduledRegenVorherSage;
 import TelegramBot.scheduledBotCommands.TimerTaskFactory;
 
 public class TelegramBot extends TelegramLongPollingBot {
@@ -37,7 +38,9 @@ public class TelegramBot extends TelegramLongPollingBot {
 	private void initScheduledCommands() {
 
 		new Timer().schedule(TimerTaskFactory.getTimerTaskInstanze("kinopolis", this), 00, TimerTaskFactory.PERWEEK);
+		new Timer().schedule(TimerTaskFactory.getTimerTaskInstanze(new ScheduledRegenVorherSage(), this), 00, TimerTaskFactory.PERHOURE);
 
+		
 	}
 
 	public String getBotUsername() {

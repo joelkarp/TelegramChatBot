@@ -5,6 +5,7 @@ import java.util.TimerTask;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
+import TelegramBot.BotCommands.BotCommand;
 import TelegramBot.BotCommands.CommandNotFoundException;
 import TelegramBot.TelegramChatBot.TelegramBot;
 
@@ -43,5 +44,39 @@ public class TimerTaskFactory {
 
 		};
 	}
+	
+	public static TimerTask getTimerTaskInstanze(BotCommand command, TelegramBot bot) {
+		return new TimerTask() {
+
+			private final String chatId = "579358021";
+
+			@Override
+			public void run() {
+
+				String antwort;
+				try {
+					antwort = command.execute();
+					if(!antwort.isEmpty()) {
+						
+						SendMessage message = new SendMessage();
+						message.setChatId(this.chatId);
+						message.setText(antwort);
+
+						bot.execute(message);
+					}
+
+			
+
+				} catch (TelegramApiException e1) {
+
+					e1.printStackTrace();
+				}
+
+			}
+
+		};
+	}
+	
+	
 
 }

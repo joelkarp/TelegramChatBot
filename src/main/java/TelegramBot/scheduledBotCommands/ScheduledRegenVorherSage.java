@@ -1,22 +1,26 @@
 package TelegramBot.scheduledBotCommands;
 
 import TelegramBot.BotCommands.BotCommand;
-import TelegramBot.BotCommands.RegenVorherSage;
+import TelegramBot.BotCommands.WetterVorherSage;
 
 public class ScheduledRegenVorherSage implements BotCommand{
 
 	@Override
 	public String execute() {
 		
-		BotCommand regenVorhersage = new RegenVorherSage();
 		
+		BotCommand wetterVorhersageCommand = new WetterVorherSage();
+		String vorhersage = wetterVorhersageCommand.execute().split("\n")[2];
 		
-		return  ""+getRainRiskInPercent(regenVorhersage.execute());
+		if(getRegenRisikoInProzent( vorhersage)>40)
+			return wetterVorhersageCommand.execute().split("\n")[2];
+		
+		return "";
 	}
-	private int getRainRiskInPercent(String vorhersage) {
-		String wahrscheinlichkeit = vorhersage.split(" ")[1];
-		wahrscheinlichkeit = wahrscheinlichkeit.substring(0, wahrscheinlichkeit.length()-1);
-		return Integer.parseInt(wahrscheinlichkeit);
+	private int getRegenRisikoInProzent(String procent) {
+		procent = procent.split(" ")[1];
+		return Integer.parseInt(procent.substring(0, procent.length()-1));
+	
 	}
 
 }
