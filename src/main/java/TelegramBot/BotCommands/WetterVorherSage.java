@@ -13,12 +13,8 @@ public class WetterVorherSage implements BotCommand {
 
 	public String execute() {
 
-		Document doc;
 		try {
-			doc = Jsoup.connect("https://www.wetter.de/deutschland/wetter-bonn-18220678/wetterbericht-aktuell.html")
-					.get();
-
-			Elements elemnts = doc.getElementsByClass("column-content");
+			Elements elemnts = getWebsiteElements();
 			return getWeatherForNextHoure(elemnts);
 
 		} catch (IOException e) {
@@ -28,21 +24,28 @@ public class WetterVorherSage implements BotCommand {
 		}
 	}
 
-
+	private Elements getWebsiteElements() throws IOException {
+		Document doc;
+		
+		doc = Jsoup.connect("https://www.wetter.de/deutschland/wetter-bonn-18220678/wetterbericht-aktuell.html").get();
+		Elements elemnts = doc.getElementsByClass("column-content");
+		
+		return elemnts;
+	}
 
 	private String getWeatherForNextHoure(Elements elemnts) {
 
 		String answer = "";
 		Element curentElementWithTime;
 		Element curentElementWithDetaildInfo;
-		
+
 		for (int i = 0; i < elemnts.size(); i++) {
 
 			curentElementWithTime = elemnts.get(i).child(0);
 			curentElementWithDetaildInfo = elemnts.get(i).child(1);
 
-			if (getTimeFromNode(curentElementWithTime.text()).equals(getNextHoure() )) {
-				
+			if (getTimeFromNode(curentElementWithTime.text()).equals(getNextHoure())) {
+
 				answer += getDataFromElement(curentElementWithTime);
 				answer += getDataFromElement(curentElementWithDetaildInfo);
 			}
@@ -59,10 +62,11 @@ public class WetterVorherSage implements BotCommand {
 		return df.format(now.getTime()).split(":")[0];
 
 	}
+
 	private String getNextHoure() {
-		return (Integer.parseInt(getCurrentTimeHH())+1)+"";
+		return (Integer.parseInt(getCurrentTimeHH()) + 1) + "";
 	}
-	
+
 	private String getTimeFromNode(String text) {
 
 		return text.split(" ")[0].split(":")[0];
@@ -78,4 +82,6 @@ public class WetterVorherSage implements BotCommand {
 
 		return ergebnis;
 	}
+
+
 }
