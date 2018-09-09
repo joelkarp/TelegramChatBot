@@ -1,2 +1,5 @@
+TelegramBot/BotCommands/ActivCommandsTest.class
 TelegramBot/TelegramChatBot/AppTest.class
 TelegramBot/TelegramChatBot/TelegramBotTests.class
+TelegramBot/BotCommands/WetterVorherSageTest.class
+TelegramBot/BotCommands/KinopolisKinoProgramTest.class

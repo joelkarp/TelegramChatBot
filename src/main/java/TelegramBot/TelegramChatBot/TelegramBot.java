@@ -11,6 +11,7 @@ import TelegramBot.BotCommands.ActivCommands;
 import TelegramBot.BotCommands.CommandNotFoundException;
 import TelegramBot.BotCommands.KinopolisKinoProgram;
 import TelegramBot.BotCommands.TimerTaskFactory;
+import TelegramBot.BotCommands.WetterVorherSage;
 
 
 public class TelegramBot extends TelegramLongPollingBot {
@@ -27,7 +28,8 @@ public class TelegramBot extends TelegramLongPollingBot {
 	private void initCommandList() {
 		
 		commandList.addCommand("kinopolis", new KinopolisKinoProgram());
-
+		commandList.addCommand("wetter", new WetterVorherSage());
+		
 	}
 
 	private void initScheduledCommands() {
