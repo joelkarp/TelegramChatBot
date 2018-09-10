@@ -13,7 +13,7 @@ public class TimerTaskFactory {
 	
 	public static final int PERSECOND = 1000;
 	public static final int PERMINUTE = 60000;
-	public static final int PERHOURE = 3600000;
+	public static final int PERHOUR = 3600000;
 	public static final int PERDAY = 86400000;
 	public static final int PERWEEK = 604800000;
 
@@ -25,13 +25,13 @@ public class TimerTaskFactory {
 			@Override
 			public void run() {
 
-				String antwort;
+				String answer;
 				try {
-					antwort = bot.getCommandList().getCommand(command).execute();
+					answer = bot.getCommandList().getCommand(command).execute();
 
 					SendMessage message = new SendMessage();
 					message.setChatId(this.chatId);
-					message.setText(antwort);
+					message.setText(answer);
 
 					bot.execute(message);
 

@@ -9,11 +9,11 @@ import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
 import TelegramBot.BotCommands.ActivCommands;
 import TelegramBot.BotCommands.CommandNotFoundException;
-import TelegramBot.BotCommands.KinopolisKinoProgram;
+import TelegramBot.BotCommands.KinopolisKinoprogramm;
 
-import TelegramBot.BotCommands.RegenVorherSage;
-import TelegramBot.BotCommands.WetterVorherSage;
-import TelegramBot.scheduledBotCommands.ScheduledRegenVorherSage;
+import TelegramBot.BotCommands.Regenvorhersage;
+import TelegramBot.BotCommands.Wettervorhersage;
+import TelegramBot.scheduledBotCommands.ScheduledRegenvorhersage;
 import TelegramBot.scheduledBotCommands.TimerTaskFactory;
 
 public class TelegramBot extends TelegramLongPollingBot {
@@ -29,16 +29,16 @@ public class TelegramBot extends TelegramLongPollingBot {
 
 	private void initCommandList() {
 
-		commandList.addCommand("kinopolis", new KinopolisKinoProgram());
-		commandList.addCommand("wetter", new WetterVorherSage());
-		commandList.addCommand("regnen", new RegenVorherSage());
+		commandList.addCommand("kinopolis", new KinopolisKinoprogramm());
+		commandList.addCommand("wetter", new Wettervorhersage());
+		commandList.addCommand("regnen", new Regenvorhersage());
 
 	}
 
 	private void initScheduledCommands() {
 
 		new Timer().schedule(TimerTaskFactory.getTimerTaskInstanze("kinopolis", this), 00, TimerTaskFactory.PERWEEK);
-		new Timer().schedule(TimerTaskFactory.getTimerTaskInstanze(new ScheduledRegenVorherSage(), this), 00, TimerTaskFactory.PERHOURE);
+		new Timer().schedule(TimerTaskFactory.getTimerTaskInstanze(new ScheduledRegenvorhersage(), this), 00, TimerTaskFactory.PERHOUR);
 
 		
 	}
@@ -61,7 +61,7 @@ public class TelegramBot extends TelegramLongPollingBot {
 
 		} else {
 
-			System.out.println("leere Nachicht erhalten");
+			System.out.println("leere Nachricht erhalten");
 
 		}
 

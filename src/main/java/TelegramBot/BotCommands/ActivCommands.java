@@ -38,15 +38,13 @@ public class ActivCommands {
 	private String surchForKey(String message) throws CommandNotFoundException {
 
 		Stream<String> messageAsStream = Arrays.asList(message.toLowerCase().split(" ")).stream();
-		String[] antwort = messageAsStream.filter(word -> commands.containsKey(word)).toArray(String[]::new);
+		String[] answer = messageAsStream.filter(word -> commands.containsKey(word)).toArray(String[]::new);
 		
-		Arrays.asList(antwort).stream().forEach(word->System.out.println(word));
-
 		
-		if (antwort.length == 0)
+		if (answer.length == 0)
 			throw new CommandNotFoundException();
 		else
-			return antwort[0];
+			return answer[0];
 
 	}
 

@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
-Test set: TelegramBot.BotCommands.WetterVorherSageTest
+Test set: TelegramBot.BotCommands.WetterVorhersageTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.063 s - in TelegramBot.BotCommands.WetterVorherSageTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.079 s - in TelegramBot.BotCommands.WetterVorhersageTest

@@ -18,17 +18,17 @@ public class ActivCommandsTest {
 	@Test
 	public void addCommandTest() {
 		assertEquals(0, commandList.getCommandCount());
-		commandList.addCommand("kinopolis programm", new KinopolisKinoProgram());
+		commandList.addCommand("kinopolis programm", new KinopolisKinoprogramm());
 		assertEquals(1, commandList.getCommandCount());
-		commandList.addCommand("kinopolis", new KinopolisKinoProgram());
+		commandList.addCommand("kinopolis", new KinopolisKinoprogramm());
 		assertEquals(2, commandList.getCommandCount());
 	}
 
 	@Test
 	public void removeCommandTest() {
 		assertEquals(0, commandList.getCommandCount());
-		commandList.addCommand("kinopolis programm", new KinopolisKinoProgram());
-		commandList.addCommand("kinopolis", new KinopolisKinoProgram());
+		commandList.addCommand("kinopolis programm", new KinopolisKinoprogramm());
+		commandList.addCommand("kinopolis", new KinopolisKinoprogramm());
 		assertEquals(2, commandList.getCommandCount());
 		commandList.removeCommand("kinopolis programm");
 		assertEquals(1, commandList.getCommandCount());
@@ -39,8 +39,8 @@ public class ActivCommandsTest {
 	@Test
 	public void getCommandTest() {
 		assertEquals(0, commandList.getCommandCount());
-		commandList.addCommand("kinopolis programm", new KinopolisKinoProgram());
-		commandList.addCommand("kinopolis", new KinopolisKinoProgram());
+		commandList.addCommand("kinopolis programm", new KinopolisKinoprogramm());
+		commandList.addCommand("kinopolis", new KinopolisKinoprogramm());
 		assertEquals(2, commandList.getCommandCount());
 
 		assertThrows(CommandNotFoundException.class, () -> {

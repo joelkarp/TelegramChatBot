@@ -1,14 +1,14 @@
 package TelegramBot.BotCommands;
 
-public class RegenVorherSage implements BotCommand {
+public class Regenvorhersage implements BotCommand {
 
 	@Override
 	public String execute() {
 
-		BotCommand wetterVorhersageCommand = new WetterVorherSage();
-		System.out.println(wetterVorhersageCommand.execute().split("\n")[2]);
+		BotCommand wettervorhersageCommand = new Wettervorhersage();
+		System.out.println(wettervorhersageCommand.execute().split("\n")[2]);
 
-		return wetterVorhersageCommand.execute().split("\n")[2];
+		return wettervorhersageCommand.execute().split("\n")[2];
 	}
 
 }

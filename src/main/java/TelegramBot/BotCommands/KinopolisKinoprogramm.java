@@ -6,7 +6,7 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
 
-public class KinopolisKinoProgram implements BotCommand{
+public class KinopolisKinoprogramm implements BotCommand{
 
 	public String execute() {
 		
@@ -19,19 +19,19 @@ public class KinopolisKinoProgram implements BotCommand{
 
 			System.out.println(doc.title());
 
-			String ergebnis = doc.title();
+			String result = doc.title();
 			
 			for (int i = 0; i < 8; i++) {
 				
-				ergebnis += "\n" + el.get(i).child(0).text();
-				ergebnis += "\n" + el.get(i).child(1).child(1).child(0).text();
-				ergebnis += "\n" + el.get(i).child(0).child(0).attr("abs:href");
-				ergebnis += "\n";
+				result += "\n" + el.get(i).child(0).text();
+				result += "\n" + el.get(i).child(1).child(1).child(0).text();
+				result += "\n" + el.get(i).child(0).child(0).attr("abs:href");
+				result += "\n";
 				
 			}
 			// System.out.println(el.get(0));
 
-			return ergebnis;
+			return result;
 
 		} catch (IOException e) {
 

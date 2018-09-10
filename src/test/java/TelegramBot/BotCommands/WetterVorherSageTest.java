@@ -5,9 +5,9 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
 
-public class WetterVorherSageTest {
+public class WetterVorhersageTest {
 
-	BotCommand wetterCommand = new WetterVorherSage();
+	BotCommand wetterCommand = new Wettervorhersage();
 
 	@Test
 	public void executeTest() {

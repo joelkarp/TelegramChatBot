@@ -1,8 +1,11 @@
+TelegramBot/scheduledBotCommands/TimerTaskFactory$2.class
+TelegramBot/BotCommands/CommandNotFoundException.class
+TelegramBot/scheduledBotCommands/TimerTaskFactory.class
 TelegramBot/BotCommands/BotCommand.class
 TelegramBot/TelegramChatBot/App.class
 TelegramBot/TelegramChatBot/TelegramBot.class
-TelegramBot/BotCommands/RegenVorherSage.class
+TelegramBot/BotCommands/Wettervorhersage.class
+TelegramBot/scheduledBotCommands/TimerTaskFactory$1.class
+TelegramBot/BotCommands/Regenvorhersage.class
 TelegramBot/BotCommands/ActivCommands.class
-TelegramBot/BotCommands/CommandNotFoundException.class
-TelegramBot/BotCommands/KinopolisKinoProgram.class
-TelegramBot/BotCommands/WetterVorherSage.class
+TelegramBot/scheduledBotCommands/ScheduledRegenvorhersage.class

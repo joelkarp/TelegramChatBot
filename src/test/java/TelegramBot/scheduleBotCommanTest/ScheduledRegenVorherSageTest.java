@@ -5,11 +5,11 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.Test;
 import TelegramBot.BotCommands.BotCommand;
-import TelegramBot.scheduledBotCommands.ScheduledRegenVorherSage;
+import TelegramBot.scheduledBotCommands.ScheduledRegenvorhersage;
 
-public class ScheduledRegenVorherSageTest {
+public class ScheduledRegenvorhersageTest {
 
-	BotCommand wetterCommand = new ScheduledRegenVorherSage();
+	BotCommand wetterCommand = new ScheduledRegenvorhersage();
 
 	@Test
 	public void executeTest() {
