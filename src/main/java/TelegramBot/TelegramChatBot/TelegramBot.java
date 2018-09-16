@@ -16,12 +16,19 @@ import TelegramBot.BotCommands.Wettervorhersage;
 import TelegramBot.scheduledBotCommands.ScheduledRegenvorhersage;
 import TelegramBot.scheduledBotCommands.TimerTaskFactory;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+
 public class TelegramBot extends TelegramLongPollingBot {
 
 	private ActivCommands commandList;
+	final static Logger logger = LoggerFactory.getLogger(TelegramBot.class);
 
 	public TelegramBot() {
 
+		logger.info("Bot started!");
+		
 		commandList = new ActivCommands();
 		initCommandList();
 		initScheduledCommands();
