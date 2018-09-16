@@ -15,12 +15,12 @@ public class ActivCommandsTest {
 	ActivCommands commandList;
 
 	@BeforeEach
-	public void beforEachTest() {
+	public void beforEach() {
 		this.commandList = new ActivCommands();
 	}
 
 	@Test
-	public void addCommandTest() {
+	public void testAddCommand() {
 		assertEquals(0, commandList.getCommandCount());
 		commandList.addCommand("kinopolis programm", new KinopolisKinoprogramm());
 		assertEquals(1, commandList.getCommandCount());
@@ -29,7 +29,7 @@ public class ActivCommandsTest {
 	}
 
 	@Test
-	public void removeCommandTest() {
+	public void testRemoveCommand() {
 		assertEquals(0, commandList.getCommandCount());
 		commandList.addCommand("kinopolis programm", new KinopolisKinoprogramm());
 		commandList.addCommand("kinopolis", new KinopolisKinoprogramm());
@@ -41,7 +41,7 @@ public class ActivCommandsTest {
 	}
 
 	@Test
-	public void getCommandTest() {
+	public void testGetCommand() {
 		assertEquals(0, commandList.getCommandCount());
 		commandList.addCommand("kinopolis programm", new KinopolisKinoprogramm());
 		commandList.addCommand("kinopolis", new KinopolisKinoprogramm());

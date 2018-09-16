@@ -12,7 +12,7 @@ public class KinopolisKinoprogrammTest {
 	BotCommand kinopolisCom = new KinopolisKinoprogramm();
 	
 	@Test
-	public void KinopolisKinoProgramExecuteTest() {
+	public void testKinopolisKinoProgramExecute() {
 		assertNotNull(kinopolisCom.execute());
 	}
 	

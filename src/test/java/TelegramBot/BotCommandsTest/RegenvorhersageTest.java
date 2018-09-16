@@ -13,7 +13,7 @@ public class RegenvorhersageTest {
 	BotCommand wetterCommand = new Regenvorhersage();
 
 	@Test
-	public void executeTest() {
+	public void testExecute() {
 		
 		assertNotNull(wetterCommand.execute());
 		assertTrue(wetterCommand.execute().contains("Risiko"));
