@@ -25,3 +25,13 @@ Icon
 Network Trash Folder
 Temporary Items
 .apdisk
+ 
+
+# Ignore target at the top level
+/target/
+# Ignore child project's targets as well
+/*/target/
+# And any grandchildren ...
+/*/*/target/
+# which matches 'target' in any sub folder
+target/
