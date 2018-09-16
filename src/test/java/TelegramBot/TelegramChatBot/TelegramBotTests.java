@@ -12,7 +12,7 @@ public class TelegramBotTests {
 
 	@Test
 	public void getBotTokenTest() {
-		System.out.println("Test getBotTokenTest");
+		
 		assertEquals("457679296:AAECBoRZxc9Co2dJOcJfZ0utwDa_rlB0ytY", teleBot.getBotToken());
 	}
 

@@ -23,7 +23,7 @@ import org.slf4j.LoggerFactory;
 public class TelegramBot extends TelegramLongPollingBot {
 
 	private ActivCommands commandList;
-	final static Logger logger = LoggerFactory.getLogger(TelegramBot.class);
+	private final static Logger logger = LoggerFactory.getLogger(TelegramBot.class);
 
 	public TelegramBot() {
 
@@ -108,4 +108,9 @@ public class TelegramBot extends TelegramLongPollingBot {
 		return commandList;
 	}
 
+	public static final Logger getBotLogger() {
+		return logger;
+	}
+
+	
 }
