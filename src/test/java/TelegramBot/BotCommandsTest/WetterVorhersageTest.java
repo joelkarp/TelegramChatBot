@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 import TelegramBot.BotCommands.BotCommand;
 import TelegramBot.BotCommands.Wettervorhersage;
 
-public class WetterVorhersageTest {
+public class WettervorhersageTest {
 
 	BotCommand wetterCommand = new Wettervorhersage();
 

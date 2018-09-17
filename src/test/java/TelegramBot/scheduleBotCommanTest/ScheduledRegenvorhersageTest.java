@@ -9,10 +9,11 @@ import TelegramBot.scheduledBotCommands.ScheduledRegenvorhersage;
 
 public class ScheduledRegenvorhersageTest {
 
-	BotCommand wetterCommand = new ScheduledRegenvorhersage();
 
 	@Test
 	public void executeTest() {
+		BotCommand wetterCommand = new ScheduledRegenvorhersage();
+		
 		assertNotNull(wetterCommand.execute());
 		assertFalse(wetterCommand.execute().contains("%"));
 	}

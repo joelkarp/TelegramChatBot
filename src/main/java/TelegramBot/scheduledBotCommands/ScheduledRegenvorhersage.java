@@ -9,12 +9,12 @@ public class ScheduledRegenvorhersage implements BotCommand{
 	public String execute() {
 		
 		
-		BotCommand wetterVorhersageCommand = new Wettervorhersage();
+		BotCommand wettervorhersageCommand = new Wettervorhersage();
 		
-		String vorhersage = wetterVorhersageCommand.execute().split("\n")[2];
+		String vorhersage = wettervorhersageCommand.execute().split("\n")[2];
 		
 		if(getRainRiskInPercent( vorhersage)>40)
-			return wetterVorhersageCommand.execute().split("\n")[2];
+			return wettervorhersageCommand.execute().split("\n")[2];
 		
 		return "";
 	}
